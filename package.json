@@ -15,5 +15,9 @@
     "api's"
   ],
   "author": "Martín David Roldán <martin.davrold@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
