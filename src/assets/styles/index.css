@@ -2,10 +2,10 @@
 :root {
   --primary-font: 'Roboto', sans-serif;
   --secondary-font: 'Libre Baskerville', serif;
-  --xl: 28px;
-  --lg: 16px;
-  --md: 14px;
-  --sm: 11px;
+  --xl: 2.8rem;
+  --lg: 1.6rem;
+  --md: 1.4rem;
+  --sm: 1.1rem;
   --bg-app: #fcfcfc;
   --white: #ffffff;
   --gray-light: #eaeaea;
@@ -36,4 +36,29 @@ html {
 
 body {
   background-color: var(--bg-app);
+}
+
+/* Global classes */
+.container-width {
+  min-width: 320px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container-padding {
+  padding: 0 30px;
+}
+
+/* Global queries */
+@media (min-width: 769px) {
+  .container-padding {
+    padding: 0 60px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .container-padding {
+    padding: 0 150px;
+  }
 }
