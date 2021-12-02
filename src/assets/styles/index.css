@@ -1,3 +1,39 @@
+/* Variables */
+:root {
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Libre Baskerville', serif;
+  --xl: 28px;
+  --lg: 16px;
+  --md: 14px;
+  --sm: 11px;
+  --bg-app: #fcfcfc;
+  --white: #ffffff;
+  --gray-light: #eaeaea;
+  --text-dark: #343434;
+  --text-medium: #606060;
+  --text-light: #767676;
+  --border-dark: #2e2e2e;
+  --border-medium: #979797;
+  --border-light: #d6d6d6;
+  --blue-dark: #1890ff;
+  --blue-light: #1797ff;  
+  --red-favorite: #dd0031;
+  --border-radius-lg: 6px;
+  --border-radius-md: 4px;
+  --border-radius-sm: 2px;
+}
+
+/* Styles reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  color: red;
+  background-color: var(--bg-app);
 }
