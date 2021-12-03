@@ -1,6 +1,11 @@
+import Filters from '../components/Filters'
+
 const Home = () => {
   return (
-    <h1>Home</h1>
+    <main className="Main container-padding">
+      <Filters />
+      <h1>Home</h1>
+    </main>
   )
 }
 

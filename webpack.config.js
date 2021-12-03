@@ -34,6 +34,13 @@ module.exports = {
           { loader: MiniCssExtractPlugin.loader },
           'css-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/assets/[hash][ext][query]'
+        }
       }
     ]
   },

@@ -1,0 +1,18 @@
+.Filters {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  width: 100%;
+  margin-bottom: 38px;
+}
+
+@media (min-width: 620px) {
+  .Filters {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
