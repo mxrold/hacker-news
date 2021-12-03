@@ -1,6 +1,12 @@
+import { Link } from 'react-router-dom'
+import '../assets/styles/pages/NotFound.css'
+
 const NotFound = () => {
   return (
-    <h1>NotFound</h1>
+    <section className="NotFound">
+      <h2>Oops! We couldn't find this page 🤯</h2>
+      <Link to="/">Go back</Link>
+    </section>
   )
 }
 

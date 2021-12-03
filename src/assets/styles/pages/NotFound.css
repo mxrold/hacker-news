@@ -1,0 +1,30 @@
+.NotFound {
+  display: grid;
+  place-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.NotFound h2 {
+  font-size: var(--lg);
+  font-family: var(--primary-font);
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.NotFound a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  margin-top: 20px;
+  font-size: var(--md);
+  font-family: var(--primary-font);
+  font-weight: 500;
+  background-color: var(--white);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+}
