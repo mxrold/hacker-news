@@ -43,7 +43,8 @@ body {
   min-width: 320px;
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container-padding {
