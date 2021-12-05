@@ -2,11 +2,10 @@ import Select from './Select'
 import Search from './Search'
 import '../assets/styles/components/Filters.css'
 
-const Filters = () => {
-
+const Filters = ({ onClick }) => {
   return (
     <div className="Filters container-width">
-      <Select />
+      <Select onClick={onClick} />
       <Search />
     </div>
   )
