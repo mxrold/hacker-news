@@ -1,6 +1,11 @@
+import News from '../components/News'
+import { data } from '../initialState'
+
 const Favorites = () => {
   return (
-    <h1>Favorites</h1>
+    <main className="Main container-padding">
+      <News data={data} />
+    </main>
   )
 }
 
