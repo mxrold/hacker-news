@@ -8,7 +8,7 @@ const Home = () => {
   const [category, setCategory] = useState('angular')
   const { data, error, loading } = useGetData(category)
 
-  const handleCaterogy = (value) => {
+  const handleCategory = (value) => {
     setCategory(value)
   }
 
@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <main className="Main container-padding">
-      <Filters onClick={handleCaterogy} />
+      <Filters onClick={handleCategory} />
       {
       loading 
         ? <h2>Loading...</h2>
