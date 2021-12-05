@@ -1,12 +1,15 @@
 import Filters from '../components/Filters'
+import News from '../components/News'
+import { data } from '../initialState'
 
 const Home = () => {
   return (
     <main className="Main container-padding">
       <Filters />
-      <h1>Home</h1>
+      <News data={data} />
     </main>
   )
 }
 
 export default Home
+

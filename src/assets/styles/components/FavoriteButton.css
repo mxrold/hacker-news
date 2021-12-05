@@ -1,0 +1,29 @@
+.FavoriteButton {
+  display: grid;
+  place-items: center;
+  width: 20%;
+  padding: 16px;
+  background-color: var(--gray-light);
+  border-top-right-radius: var(--border-radius-lg);
+  border-bottom-right-radius: var(--border-radius-lg);
+}
+
+.FavoriteButton button {
+  width: 22px;
+  height: 22px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 480px) {
+  .FavoriteButton {
+    width: 15%;
+  }
+}
+
+@media (min-width: 620px) {
+  .FavoriteButton {
+    min-width: 70px;
+    width: 10%;
+  }
+}
