@@ -9,7 +9,7 @@ const News = ({ data }) => {
         data.map(item => (
           <article className="News__item" key={item.story_id}>
             <NewsData {...item} />
-            <FavoriteButton />
+            <FavoriteButton id={item.story_id} item={item} />
           </article>
         ))
       }

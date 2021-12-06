@@ -1,12 +1,17 @@
+import { useLocalStorage } from '../hooks/useLocalStorage'
 import OutlineHeart from '../assets/static/outline-heart.svg'
 import HeartFill from '../assets/static/heart-fill.svg'
 import '../assets/styles/components/FavoriteButton.css'
 
-const FavoriteButton = () => {
+const FavoriteButton = ({ id, item }) => {
+  const key = `HACKER_NEWS_FAV_${id}`
+  const initialValue = false
+  const [isFavorite, toggleFavorite] = useLocalStorage(key, initialValue)
+ 
   return (
     <div className="FavoriteButton">
-      <button>
-        <img src={OutlineHeart} alt="Favorite icon" title="Add to favorites" />
+      <button onClick={() => toggleFavorite(item)}>
+        <img src={isFavorite ? HeartFill : OutlineHeart} alt="Favorite icon" title="Add to favorites" />
       </button>
     </div>
   )

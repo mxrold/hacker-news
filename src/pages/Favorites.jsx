@@ -1,4 +1,5 @@
 import News from '../components/News'
+/* Fake data */
 import { data } from '../initialState'
 
 const Favorites = () => {

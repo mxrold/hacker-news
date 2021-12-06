@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { useGetData } from '../hooks/useGetData'
 import Filters from '../components/Filters'
 import News from '../components/News'
-import { data } from '../initialState'
+/* Fake data */
+// import { data } from '../initialState'
 
 const Home = () => {
   const [category, setCategory] = useState('angular')
