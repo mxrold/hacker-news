@@ -47,6 +47,10 @@ h2 {
 }
 
 /* Global classes */
+#app {
+  position: relative;
+}
+
 .container-width {
   min-width: 320px;
   width: 100%;

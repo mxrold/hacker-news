@@ -9,16 +9,18 @@ export const useLocalStorage = (key = '', initialValue = '') => {
       return initialValue
     }
   })
+  const [stateRemoveItem, setStateRemoveItem] = useState(false)
 
   const toggleFavorite = (item) => {
     window.localStorage.getItem(key) ? handleRemoveItem() : handleAddItem(item)
   }
 
-  const handleRemoveItem = () => {
-    const alert = window.confirm('Do you want to delete this favorite?')
-    if (alert) {
+  const handleRemoveItem = (confirm) => {
+    setStateRemoveItem(true)
+    if (confirm) {
       window.localStorage.removeItem(key)
       setStore(false)
+      setStateRemoveItem(false)
     }
   }
 
@@ -31,5 +33,5 @@ export const useLocalStorage = (key = '', initialValue = '') => {
     }
   }
 
-  return { store, toggleFavorite, handleAddItem }
+  return { store, toggleFavorite, handleAddItem, handleRemoveItem, stateRemoveItem, setStateRemoveItem }
 }

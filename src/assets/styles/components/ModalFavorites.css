@@ -1,0 +1,72 @@
+.ModalFavorites {
+  position: relative;
+  max-width: 300px;
+  padding: 30px;
+  background-color: var(--gray-light);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--border-radius-lg);
+}
+
+.ModalFavorites__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 5px;
+  font-size: var(--sm);
+  font-weight: 500;
+  font-family: var(--primary-font);
+  background-color: rgba(0, 0, 0, .025);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+}
+
+.ModalFavorites__button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 35px;
+  margin-top: 30px;
+  border: none;
+}
+
+.ModalFavorites__button button {
+  width: 48%;
+  padding: 3px 12px;
+  font-size: var(--md);
+  font-weight: 500;
+  font-family: var(--primary-font);
+  border-radius: var(--border-radius-md);
+  border: none;
+  cursor: pointer;
+  opacity: .85;
+}
+
+.ModalFavorites__button--close {
+  margin-right: 12px;
+  background-color: rgba(0, 0, 0, .025);
+}
+
+.ModalFavorites__button--remove {
+  background-color: #FECACA;
+  color: var(--red-favorite);
+}
+
+.ModalFavorites__button--close:hover, 
+.ModalFavorites__button--remove:hover {
+  opacity: 1;
+}
+
+@media (min-width: 769px) {
+  .ModalFavorites {
+    max-width: max-content;
+  }
+
+  .ModalFavorites__button {
+    justify-content: flex-end;
+  }
+  
+  .ModalFavorites__button button {
+    width: max-content;
+  }
+}
