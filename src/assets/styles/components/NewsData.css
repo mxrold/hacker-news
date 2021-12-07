@@ -15,11 +15,15 @@
   margin-bottom: .5px;
 }
 
-.NewsData__user p {
+.NewsData__user p, 
+.NewsData__user time {
   font-size: var(--sm);
   font-family: var(--primary-font);
   font-weight: 400;
   color: var(--text-light);
+}
+.NewsData__user time {
+  margin-right: 2px;
 }
 
 .NewsData__title h3 {
