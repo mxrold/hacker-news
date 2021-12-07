@@ -5,26 +5,28 @@ import React from '../assets/static/react-icon.png'
 import Vue from '../assets/static/vue-icon.png'
 import '../assets/styles/components/Select.css'
 
-const Select = ({ onClick }) => {
+const Select = ({ onClick, category }) => {
   const [isActive, setIsActive] = useState(false)
 
   const categories = [
     {
       title: 'Angular',
       src: Angular,
-      category: 'angular'
+      path: 'angular'
     },
     {
       title: 'React',
       src: React,
-      category: 'reactjs'
+      path: 'reactjs'
     },
     {
       title: 'Vue',
       src: Vue,
-      category: 'vuejs'
+      path: 'vuejs'
     }
   ]
+
+  const handleActiveCategory = (path) => category === path ? 'active-category' : ''
 
   return (
     <div className="Select">
@@ -40,8 +42,14 @@ const Select = ({ onClick }) => {
           <ul className="Select__button--dropdown--list">
             {
               categories.map(item => (
-                <li className="Select__button--dropdown--list-item" key={item.title}>
-                  <button onClick={() => onClick(item.category)}><img src={item.src} alt={`${item.title} icon`} />{item.title}</button>
+                <li className="Select__button--dropdown--list-item" key={item.title} title={`${item.title} news`}>
+                  <button 
+                    className={handleActiveCategory(item.path)}
+                    onClick={() => onClick(item.path)}
+                  >
+                    <img src={item.src} alt={`${item.title} icon`} />
+                    {item.title}
+                  </button>
                 </li>
               ))
             }

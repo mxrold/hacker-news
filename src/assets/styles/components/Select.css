@@ -103,11 +103,25 @@
 }
 
 .Select__button--dropdown--list-item button:hover {
-  background-color: var(--gray-light);
+  background-color: rgba(0, 0, 0, 0.020);
 }
 
 .Select__button--dropdown--list-item button img {
   margin-right: 12px;
+}
+
+.active-category {
+  background-color: var(--gray-light) !important;
+  box-shadow: 0 0 1px 1px var(--border-light);
+}
+
+.active-category::after {
+  content: '·';
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 4rem;
+  color: var(--text-light);
 }
 
 @media (min-width: 620px) {

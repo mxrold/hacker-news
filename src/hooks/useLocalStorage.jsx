@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-export const useLocalStorage = (key, initialValue) => {
-  const [isFavorite, setIsFavorite] = useState(() => {
+export const useLocalStorage = (key = '', initialValue = '') => {
+  const [store, setStore] = useState(() => {
     try {
       const item = window.localStorage.getItem(key)
       return item !== null ? JSON.parse(item) : initialValue
@@ -11,25 +11,25 @@ export const useLocalStorage = (key, initialValue) => {
   })
 
   const toggleFavorite = (item) => {
-    window.localStorage.getItem(key) ? handleRemoveFavorite() : handleAddFavorite(item)
+    window.localStorage.getItem(key) ? handleRemoveItem() : handleAddItem(item)
   }
 
-  const handleRemoveFavorite = () => {
+  const handleRemoveItem = () => {
     const alert = window.confirm('Do you want to delete this favorite?')
     if (alert) {
       window.localStorage.removeItem(key)
-      setIsFavorite(false)
+      setStore(false)
     }
   }
 
-  const handleAddFavorite = (item) => {
+  const handleAddItem = (item) => {
     try {
       window.localStorage.setItem(key, JSON.stringify(item))
-      setIsFavorite(item)
+      setStore(item)
     } catch {
       window.alert('Could not save the favorite')
     }
   }
 
-  return [isFavorite, toggleFavorite]
+  return { store, toggleFavorite, handleAddItem }
 }

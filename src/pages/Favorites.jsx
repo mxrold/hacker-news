@@ -5,7 +5,7 @@ import { useGetDataLocalStorage } from '../hooks/useGetDataLocalStorage'
 
 const Favorites = () => {
   const KEY_FAVS = 'HACKER_NEWS_FAV'
-  const [listFavorites] = useGetDataLocalStorage(KEY_FAVS)
+  const [ listFavorites ] = useGetDataLocalStorage(KEY_FAVS)
 
   return (
     <main className="Main container-padding">
