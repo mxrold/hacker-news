@@ -4,6 +4,7 @@ import { useInfinityScroll } from '../hooks/useInfinityScroll'
 import Filters from '../components/Filters'
 import News from '../components/News'
 import ButtonHome from '../components/ButtonHome'
+import Loader from '../components/Loader'
 import '../assets/styles/pages/Home.css'
 /* Fake data */
 // import { data } from '../initialState'
@@ -25,7 +26,7 @@ const Home = () => {
       <Filters onClick={handleCategory} category={store} />
       {countPages > 1 && <ButtonHome path={idPath} />}
       <News data={data} />
-      {loading && <h2>Loading...</h2>}
+      {loading && <Loader items={10} />}
       <div className="Observer" ref={ref}></div>
     </main>
   )
