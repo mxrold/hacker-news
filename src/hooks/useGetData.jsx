@@ -20,11 +20,14 @@ export const useGetData = (store = '', countPages = 0) => {
       const response = await fetch(value)
       const responseJson = await response.json()
       const news = responseJson.hits
+      const newArray = news.filter(item => {
+        return item.story_title && item.created_at && item.author && item.story_url
+      })
       if (category) {
         setData([])
-        setData(news)
+        setData(newArray)
       } else {
-        setData((prev) => [...prev, ...news])
+        setData((prev) => [...prev, ...newArray])
       }
       setLoading(false)
     } catch {
