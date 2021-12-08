@@ -13,6 +13,8 @@ export const useViewportWidth = (width) => {
     const handleResize = () => window.innerWidth > width ? setIsMobile(true) : setIsMobile(false)
 
     window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
   })
 
   return [ isMobile, setIsMobile ]
