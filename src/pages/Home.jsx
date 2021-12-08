@@ -1,7 +1,9 @@
 import { useGetData } from '../hooks/useGetData'
 import { useLocalStorage } from '../hooks/useLocalStorage'
+import { useInfinityScroll } from '../hooks/useInfinityScroll'
 import Filters from '../components/Filters'
 import News from '../components/News'
+import '../assets/styles/pages/Home.css'
 /* Fake data */
 // import { data } from '../initialState'
 
@@ -9,7 +11,8 @@ const Home = () => {
   const key = 'HACKER_NEWS_CATEGORY'
   const initialValue = 'angular'
   const { store, handleAddItem } = useLocalStorage(key, initialValue)
-  const { data, error, loading } = useGetData(store)
+  const { count, ref } = useInfinityScroll()
+  const { data, error, loading } = useGetData(store, count)
 
   const handleCategory = (value) => handleAddItem(value)
 
@@ -18,11 +21,9 @@ const Home = () => {
   return (
     <main className="Main container-padding">
       <Filters onClick={handleCategory} category={store} />
-      {
-      loading 
-        ? <h2>Loading...</h2>
-        : <News data={data} />
-      }
+      <News data={data} />
+      {loading && <h2>Loading...</h2>}
+      <div className="Observer" ref={ref}></div>
     </main>
   )
 }
