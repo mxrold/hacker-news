@@ -17,8 +17,8 @@ const Loader = ({ items }) => {
   return (
     <div className="Loader News container-width">
       {
-        cards.map(item => (
-          <div className="Loader__item News__item" key={item.index}>
+        cards.map((item, index) => (
+          <div className="Loader__item News__item" key={index}>
             <div className="Loader__item--color"></div>
           </div>
         ))
