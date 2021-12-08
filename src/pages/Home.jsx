@@ -25,6 +25,7 @@ const Home = () => {
     <main id={idPath} className="Main container-padding">
       <Filters onClick={handleCategory} category={store} />
       {countPages > 1 && <ButtonHome path={idPath} />}
+      <Loader items={10} />
       <News data={data} />
       {loading && <Loader items={10} />}
       <div className="Observer" ref={ref}></div>
