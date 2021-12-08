@@ -2,7 +2,7 @@
   position: relative;
   max-width: 300px;
   padding: 30px;
-  background-color: var(--gray-light);
+  background-color: var(--white);
   border: 1px solid var(--border-medium);
   border-radius: var(--border-radius-lg);
 }
@@ -15,7 +15,7 @@
   font-size: var(--sm);
   font-weight: 500;
   font-family: var(--primary-font);
-  background-color: rgba(0, 0, 0, .025);
+  background-color: rgba(0, 0, 0, .05);
   border: none;
   border-radius: var(--border-radius-md);
   cursor: pointer;
@@ -44,7 +44,7 @@
 
 .ModalFavorites__button--close {
   margin-right: 12px;
-  background-color: rgba(0, 0, 0, .025);
+  background-color: rgba(0, 0, 0, .05);
 }
 
 .ModalFavorites__button--remove {

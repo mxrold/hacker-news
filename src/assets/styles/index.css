@@ -53,7 +53,6 @@ h2 {
 }
 
 .container-width {
-  min-width: 320px;
   width: 100%;
   max-width: 1440px;
   margin-right: auto;
@@ -61,7 +60,7 @@ h2 {
 }
 
 .container-padding {
-  padding: 0 30px;
+  padding: 0 15px;
 }
 
 /* Global queries */
