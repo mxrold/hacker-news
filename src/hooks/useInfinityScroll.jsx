@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 
 export const useInfinityScroll = () => {
   const [show, setShow] = useState(false)
-  const [count, setCount] = useState(0)
+  const [countPages, setCountPages] = useState(0)
   const ref = useRef(null)
   
   useEffect(() => {
@@ -10,7 +10,7 @@ export const useInfinityScroll = () => {
       const { isIntersecting } = entries[0]
       if (isIntersecting) {
         setShow(true)
-        setCount(prevState => prevState + 1)
+        setCountPages(prevState => prevState + 1)
       } else {
         setShow(false)
       } 
@@ -18,6 +18,5 @@ export const useInfinityScroll = () => {
     observer.observe(ref.current)
   }, [ref])
 
-  return { show, count, ref }
+  return { show, countPages, ref }
 }
-  

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 
-export const useGetData = (store = '', count = 0) => {
+export const useGetData = (store = '', countPages = 0) => {
   const [data, setData] = useState([])
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
-  const url = `https://hn.algolia.com/api/v1/search_by_date?query=${store}&page=${count}`
+  const url = `https://hn.algolia.com/api/v1/search_by_date?query=${store}&page=${countPages}`
 
   useEffect(() => {  
     getData(url, true)
@@ -12,7 +12,7 @@ export const useGetData = (store = '', count = 0) => {
 
   useEffect(() => {
     getData(url, false)
-  }, [count])
+  }, [countPages])
 
   const getData = async (value, category) => {
     try {
