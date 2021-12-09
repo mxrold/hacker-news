@@ -1,11 +1,12 @@
 import { useState } from 'react'
+import LoaderCategory from './LoaderCategory'
 import Arrow from '../assets/static/arrow.svg'
 import Angular from '../assets/static/angular-icon.png'
 import React from '../assets/static/react-icon.png'
 import Vue from '../assets/static/vue-icon.png'
 import '../assets/styles/components/Select.css'
 
-const Select = ({ onClick, category }) => {
+const Select = ({ onClick, category, loading }) => {
   const [isActive, setIsActive] = useState(false)
 
   const categories = [
@@ -47,8 +48,11 @@ const Select = ({ onClick, category }) => {
                     className={handleActiveCategory(item.path)}
                     onClick={() => onClick(item.path)}
                   >
-                    <img src={item.src} alt={`${item.title} icon`} />
-                    {item.title}
+                    <div>
+                      <img src={item.src} alt={`${item.title} icon`} />
+                      {item.title}
+                    </div>
+                    {loading && handleActiveCategory(item.path) && <LoaderCategory />}
                   </button>
                 </li>
               ))

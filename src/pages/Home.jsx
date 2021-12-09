@@ -27,7 +27,13 @@ const Home = () => {
 
   return (
     <main id={idPath} className="Main container-padding">
-      <Filters onClick={handleCategory} onChange={handleInputValue} query={query} category={store} />
+      <Filters 
+        onClick={handleCategory} 
+        onChange={handleInputValue} 
+        query={query} 
+        category={store} 
+        loading={loading}
+      />
       {countPages > 1 && <ButtonHome path={idPath} />}
       <News data={searchData} />
       {loading && <Loader items={10} />}
