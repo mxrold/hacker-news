@@ -9,11 +9,11 @@ export const useSearch = (data) => {
     setQuery(text)
   }
 
-  const searchData = useMemo(() => 
+  const searchData = useMemo(() =>
     array.filter(item => {
       return item.story_title.toLowerCase().includes(query.toLowerCase())
     }),
-    [array, query]
+  [array, query]
   )
 
   return { query, onChange, searchData }

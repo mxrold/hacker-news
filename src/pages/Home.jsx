@@ -25,19 +25,19 @@ const Home = () => {
   const handleInputValue = (text) => onChange(text)
 
   return (
-    <main id={idPath} className="Main container-padding">
-      <Filters 
-        onClick={handleCategory} 
-        onChange={handleInputValue} 
-        query={query} 
-        category={store} 
+    <main id={idPath} className='Main container-padding'>
+      <Filters
+        onClick={handleCategory}
+        onChange={handleInputValue}
+        query={query}
+        category={store}
         loading={loading}
       />
-      {countPages > 1 && <ButtonHome path={idPath} />}
+      <ButtonHome path={idPath} countPages={countPages} />
       <News data={searchData} />
-      {error && <LoadingError />}
-      {loading && <Loader items={10} />}
-      <div className="Observer" ref={ref}></div>
+      <LoadingError error={error} />
+      <Loader items={10} loading={loading} />
+      <div className='Observer' ref={ref} />
     </main>
   )
 }

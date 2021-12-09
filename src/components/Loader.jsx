@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import '../assets/styles/components/News.css'
 import '../assets/styles/components/Loader.css'
 
-const Loader = ({ items }) => {
+const Loader = ({ items, loading }) => {
   const [cards, setCards] = useState([])
 
   useEffect(() => {
-    let array = []
-    for(let i = 0; i < items; i++) {
+    const array = []
+    for (let i = 0; i < items; i++) {
       array.push(i)
     }
 
@@ -15,15 +15,20 @@ const Loader = ({ items }) => {
   }, [])
 
   return (
-    <div className="Loader News container-width">
+    <>
       {
-        cards.map((item, index) => (
-          <div className="Loader__item News__item" key={index}>
-            <div className="Loader__item--color"></div>
-          </div>
-        ))
+      loading &&
+        <div className='Loader News container-width'>
+          {
+          cards.map((item, index) => (
+            <div className='Loader__item News__item' key={index}>
+              <div className='Loader__item--color' />
+            </div>
+          ))
+          }
+        </div>
       }
-    </div>
+    </>
   )
 }
 

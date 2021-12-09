@@ -9,19 +9,19 @@ const FavoriteButton = ({ id, item }) => {
   const key = `HACKER_NEWS_FAV_${id}`
   const initialValue = false
   const { store, toggleFavorite, handleRemoveItem, stateRemoveItem, setStateRemoveItem } = useLocalStorage(key, initialValue)
- 
+
   return (
     <>
-      <div className="FavoriteButton">
+      <div className='FavoriteButton'>
         <button onClick={() => toggleFavorite(item)}>
-          <img src={store ? HeartFill : OutlineHeart} alt="Favorite icon" title="Add to favorites" />
+          <img src={store ? HeartFill : OutlineHeart} alt='Favorite icon' title='Add to favorites' />
         </button>
       </div>
       {
       stateRemoveItem &&
         <Modal>
-          <ModalFavorites 
-            stateRemoveItem={stateRemoveItem} 
+          <ModalFavorites
+            stateRemoveItem={stateRemoveItem}
             setStateRemoveItem={setStateRemoveItem}
             handleRemoveItem={handleRemoveItem}
           />

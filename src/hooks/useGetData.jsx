@@ -6,7 +6,7 @@ export const useGetData = (store = '', countPages = 0) => {
   const [loading, setLoading] = useState(false)
   const url = `https://hn.algolia.com/api/v1/search_by_date?query=${store}&page=${countPages}`
 
-  useEffect(() => {  
+  useEffect(() => {
     getData(url, true)
   }, [store])
 

@@ -3,11 +3,11 @@ import '../assets/styles/components/Modal.css'
 
 const Modal = ({ children }) => {
   return ReactDOM.createPortal(
-    <div className="Modal">
+    <div className='Modal'>
       {children}
     </div>,
     document.getElementById('modal')
   )
-} 
+}
 
 export default Modal

@@ -30,21 +30,21 @@ const Select = ({ onClick, category, loading }) => {
   const handleActiveCategory = (path) => category === path ? 'active-category' : ''
 
   return (
-    <div className="Select">
-      <button 
-        className="Select__button"
+    <div className='Select'>
+      <button
+        className='Select__button'
         onClick={() => setIsActive(!isActive)}
       >
-        Select your news <img className={isActive ? 'toggle-up' : 'toggle-down'} src={Arrow} alt="Arrow icon" />
+        Select your news <img className={isActive ? 'toggle-up' : 'toggle-down'} src={Arrow} alt='Arrow icon' />
       </button>
       {
         isActive &&
-        <div className={`Select__button--dropdown ${isActive && 'slide-top'}`}>
-          <ul className="Select__button--dropdown--list">
+          <div className={`Select__button--dropdown ${isActive && 'slide-top'}`}>
+            <ul className='Select__button--dropdown--list'>
             {
               categories.map(item => (
-                <li className="Select__button--dropdown--list-item" key={item.title} title={`${item.title} news`}>
-                  <button 
+                <li className='Select__button--dropdown--list-item' key={item.title} title={`${item.title} news`}>
+                  <button
                     className={handleActiveCategory(item.path)}
                     onClick={() => onClick(item.path)}
                   >
@@ -57,8 +57,8 @@ const Select = ({ onClick, category, loading }) => {
                 </li>
               ))
             }
-          </ul>
-        </div>
+            </ul>
+          </div>
       }
     </div>
   )

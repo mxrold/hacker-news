@@ -12,12 +12,12 @@ const Navbar = () => {
       path: '/favorites'
     }
   ]
- 
+
   return (
-    <section className="Navbar">
-      <nav className="Navbar__links">
+    <section className='Navbar'>
+      <nav className='Navbar__links'>
         {
-          links.map(item => <NavbarLinks key={item.title} {...item} /> )
+          links.map(item => <NavbarLinks key={item.title} {...item} />)
         }
       </nav>
     </section>

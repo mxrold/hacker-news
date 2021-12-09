@@ -6,7 +6,7 @@ export const useGetDataLocalStorage = (keyFav) => {
   useEffect(() => {
     const data = []
 
-    for(let key in window.localStorage) {
+    for (const key in window.localStorage) {
       const values = JSON.parse(window.localStorage.getItem(key))
       key.includes(keyFav) ? data.push(values) : []
     }
