@@ -6,6 +6,7 @@ import Filters from '../components/Filters'
 import News from '../components/News'
 import ButtonHome from '../components/ButtonHome'
 import Loader from '../components/Loader'
+import LoadingError from '../components/LoadingError'
 import '../assets/styles/pages/Home.css'
 /* Fake data */
 // import { data } from '../initialState'
@@ -23,8 +24,6 @@ const Home = () => {
 
   const handleInputValue = (text) => onChange(text)
 
-  if (error) return <h2>We could not load the information.</h2>
-
   return (
     <main id={idPath} className="Main container-padding">
       <Filters 
@@ -36,6 +35,7 @@ const Home = () => {
       />
       {countPages > 1 && <ButtonHome path={idPath} />}
       <News data={searchData} />
+      {error && <LoadingError />}
       {loading && <Loader items={10} />}
       <div className="Observer" ref={ref}></div>
     </main>
